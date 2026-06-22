@@ -6,7 +6,7 @@ import Features from "./components/sections/Features";
 import Showcase from "./components/sections/Showcase";
 import Gallery from "./components/gallery/Gallery";
 import Specs from "./components/sections/Specs";
-import CTA from "./components/sections/Cta";
+import CTA from "./components/sections/CTA";
 import Footer from "./components/layout/Footer";
 
 export default function App() {
