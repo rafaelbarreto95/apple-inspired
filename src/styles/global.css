@@ -16,8 +16,8 @@
   --radius-lg: 20px;
 
   /* Shadows */
-  --shadow-sm: 0 4px 10px rgba(0,0,0,0.06);
-  --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -35,15 +35,17 @@ body {
   color: #0a0a0a;
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
+   overflow-x: hidden;
 }
 
 section {
-  padding: 140px 8%;
+   padding: 120px 8%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-h1, h2 {
+h1,
+h2 {
   letter-spacing: -0.04em;
   font-weight: 600;
 }
@@ -86,7 +88,7 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 
@@ -105,6 +107,11 @@ a:hover {
   z-index: 1000;
 
   transition: all 0.3s ease;
+ 
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  backdrop-filter: blur(10px);
 }
 
 /* container interno centralizado */
@@ -134,15 +141,16 @@ a:hover {
 
 /* LOGO */
 .logo {
+  margin-right: 30px;
   font-weight: 600;
   letter-spacing: -0.02em;
-  font-size: 14px;
+  font-size: 1.25rem;
 }
 
 /* LINKS */
 .nav-links {
   display: flex;
-  gap: 28px;
+  gap: 24px;
 }
 
 .nav-links a {
@@ -173,6 +181,12 @@ a:hover {
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* versão simples mobile */
+  }
+}
+
 /*  Hero  */
 .hero3d {
   position: relative;
@@ -184,6 +198,16 @@ a:hover {
   align-items: center;
 
   text-align: center;
+
+  flex-direction: column;
+
+  padding: 0 24px;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* versão simples mobile */
+  }
 }
 
 /* 🔥 TEXTO SEMPRE NO TOPO */
@@ -196,15 +220,20 @@ a:hover {
 }
 
 .hero-content h1 {
-  font-size: clamp(2.8rem, 5vw, 4.8rem);
+
   font-weight: 600;
   letter-spacing: -0.04em;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  letter-spacing: -0.05em;
+  max-width: 900px;
 }
 
 .hero-content p {
   margin-top: 12px;
   font-size: 1.1rem;
   color: #666;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  max-width: 600px;
 }
 
 /* 🖼️ IMAGEM AGORA COMO FUNDO CONTROLADO */
@@ -213,41 +242,58 @@ a:hover {
   bottom: -10%;
   width: 70%;
   max-width: 1000px;
-
-  border-radius: 28px;
-  box-shadow: 0 40px 120px rgba(0,0,0,0.18);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.18);
 
   z-index: 1;
+  width: min(900px, 90%);
+  margin-top: 50px;
+  border-radius: 24px;
 }
 
 /* 🌫️ OVERLAY (PROFUNDIDADE APPLE) */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(0,0,0,0.05),
-    rgba(0,0,0,0.45)
-  );
+  background: radial-gradient(circle at center,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.45));
   z-index: 2;
 }
 
 
 /*  Overview  */
 .overview {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 60px;
   align-items: center;
+  justify-content: space-between;
 }
 
 .overview h2 {
-  font-size: 2.2rem;
-  margin-bottom: 16px;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  letter-spacing: -0.04em;
+  margin-bottom: 20px;
 }
 
 .overview img {
   border-radius: 24px;
+}
+
+/* 📱 OVERVIEW MOBILE */
+@media (max-width: 900px) {
+  .overview {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .overview img {
+    width: 100%;
+  }
+
+  .overview p {
+    max-width: 100%;
+  }
 }
 
 /*  Showcase  */
@@ -297,9 +343,9 @@ a:hover {
 
 .showcase-image {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
 
-  border-radius: 32px;
+  border-radius: 28px;
 
   box-shadow:
     0 40px 120px rgba(0, 0, 0, 0.12);
@@ -336,7 +382,7 @@ img {
   padding: 60px;
   border-radius: 24px;
   background: #fff;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.08);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.08);
 }
 
 /* Footer */
@@ -344,7 +390,7 @@ img {
 .footer {
   padding: 100px 8% 40px;
   background: #fff;
-  border-top: 1px solid rgba(0,0,0,0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 /* CONTEÚDO PRINCIPAL */
@@ -396,27 +442,27 @@ img {
 .footer-bottom {
   margin-top: 60px;
   padding-top: 20px;
-  border-top: 1px solid rgba(0,0,0,0.06);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
   text-align: center;
   color: #888;
   font-size: 0.85rem;
 
   .footer-links a {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 
-  font-size: 0.9rem;
-  color: #666;
-  text-decoration: none;
+    font-size: 0.9rem;
+    color: #666;
+    text-decoration: none;
 
-  transition: 0.25s ease;
-}
+    transition: 0.25s ease;
+  }
 
-.footer-links a:hover {
-  color: #000;
-  transform: translateX(2px);
-}
+  .footer-links a:hover {
+    color: #000;
+    transform: translateX(2px);
+  }
 }
 
 /* Features */
@@ -476,11 +522,17 @@ img {
   line-height: 1.7;
 }
 
+  @media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Value */
 .value {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 60px;
   align-items: center;
 }
 
@@ -499,7 +551,7 @@ img {
 
 .value img {
   width: 100%;
-  border-radius: 28px;
+  border-radius: 24px;
   object-fit: cover;
 
   box-shadow:
@@ -518,6 +570,7 @@ img {
   .value {
     grid-template-columns: 1fr;
     gap: 40px;
+    text-align: center;
   }
 
   .value h2 {
@@ -557,12 +610,10 @@ img {
   position: absolute;
   inset: 0;
 
-  background: radial-gradient(
-    circle at center,
-    rgba(0,0,0,0.2),
-    rgba(0,0,0,0.7),
-    rgba(0,0,0,1)
-  );
+  background: radial-gradient(circle at center,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 1));
 
   backdrop-filter: blur(2px);
 }
@@ -638,7 +689,7 @@ img {
 .specs-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
 .spec-card {
@@ -664,10 +715,21 @@ img {
   color: #666;
 }
 
-/* Responsividade base */
-@media (max-width: 768px) {
-  section {
-    padding: 80px 5%;
+@media (max-width: 900px) {
+  .specs-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
+@media (max-width: 500px) {
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsividade base */
+@media (max-width: 768px) {
+  section {
+    padding: 80px 20px;
+  }
+}
