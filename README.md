@@ -1,73 +1,132 @@
-# React + TypeScript + Vite
+# 🍎 LUMEN — Apple-inspired Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma landing page moderna e minimalista inspirada no design da Apple, construída com React, TypeScript, Vite e Framer Motion.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Sobre o projeto
 
-## React Compiler
+O **LUMEN** é um projeto de portfólio focado em design premium, animações suaves e experiência de usuário fluida.
+O objetivo é simular uma página de produto real com narrativa visual e scroll cinematográfico.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧠 Conceito
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Este projeto explora:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* Design minimalista inspirado na Apple
+* Hierarquia visual forte
+* Scroll storytelling (experiência guiada)
+* Animações suaves e microinterações
+* Parallax leve e transições fluidas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Tecnologias
+
+* React
+* TypeScript
+* Vite
+* Framer Motion
+* CSS moderno (Flexbox + Grid)
+
+---
+
+## 📁 Estrutura do projeto
+
+```text
+src/
+ ├── components/
+ │    ├── Navbar
+ │    ├── Hero
+ │    ├── Overview
+ │    ├── Value
+ │    ├── Features
+ │    ├── Showcase
+ │    ├── Specs
+ │    ├── CTA
+ │    └── Footer
+ ├── styles/
+ └── App.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🎯 Features
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* 🎬 Animações suaves com Framer Motion
+* 📱 Layout responsivo
+* 🧭 Navegação por scroll (anchor links)
+* 🖼️ Galeria e vitrine de imagens
+* 🌊 Efeito parallax leve
+* 🍎 UI inspirada em produto Apple
+
+---
+
+## 📸 Preview
+
+### Hero
+![Hero](./screenshots/hero.png)
+
+### Overview
+![Overview](./screenshots/overview.png)
+
+### Gallery
+![Gallery](./screenshots/gallery.png)
+
+### CTA
+![CTA](./screenshots/cta.png)
+---
+
+## ⚙️ Como rodar o projeto
+
+```bash
+# clonar repositório
+git clone https://github.com/rafaelbarreto95/apple-inspired.git
+
+# entrar na pasta
+cd lumen
+
+# instalar dependências
+npm install
+
+# rodar projeto
+npm run dev
 ```
+
+---
+
+## 🌐 Deploy
+
+* Netlify - [https://inspirado-na-maca-mordida.netlify.app/#value](https://inspirado-na-maca-mordida.netlify.app/#value)
+
+---
+
+## 👤 Autor
+
+**Rafael Barreto**
+
+* LinkedIn:
+  [https://www.linkedin.com/in/rafael-barreto-silva/](https://www.linkedin.com/in/rafael-barreto-silva/)
+
+* Instagram:
+  [https://www.instagram.com/rafael_barreto95/](https://www.instagram.com/rafael_barreto95/)
+
+---
+
+## 💡 Objetivo
+
+Este projeto faz parte do meu portfólio como desenvolvedor Front-End, com foco em:
+
+* Interfaces modernas
+* Experiência do usuário
+* Animações e interatividade
+* Design system inspirado em produtos reais
+
+---
+
+## ⭐ Status
+
+🚧 Em evolução contínua — melhorias constantes em UI/UX e performance.
+
